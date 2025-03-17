@@ -1,7 +1,7 @@
 
 
 import React from "react";
-import { Navigate, NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 // Chakra imports
 import {
   Box,
@@ -27,7 +27,7 @@ import { FcGoogle } from "react-icons/fc";
 import { MdOutlineRemoveRedEye } from "react-icons/md";
 import { RiEyeCloseLine } from "react-icons/ri";
 
-function SignIn() {
+function SignUp() {
   // Chakra color mode
   const textColor = useColorModeValue("navy.700", "white");
   const textColorSecondary = "gray.400";
@@ -44,11 +44,10 @@ function SignIn() {
     { bg: "secondaryGray.300" },
     { bg: "whiteAlpha.200" }
   );
-  const navigate = useNavigate();
   const [show, setShow] = React.useState(false);
   const handleClick = () => setShow(!show);
   return (
-    <DefaultAuth illustrationBackground={illustration} image={illustration} flag={false}>
+    <DefaultAuth illustrationBackground={illustration} image={illustration}>
       <Flex
         maxW={{ base: "100%", md: "max-content" }}
         w='100%'
@@ -63,7 +62,7 @@ function SignIn() {
         flexDirection='column'>
         <Box me='auto'>
           <Heading color={textColor} fontSize='36px' mb='10px'>
-            Sign In
+            Sign Up
           </Heading>
           <Text
             mb='36px'
@@ -71,10 +70,10 @@ function SignIn() {
             color={textColorSecondary}
             fontWeight='400'
             fontSize='md'>
-            Enter your email and password to sign in!
+            THis page is under maintenance.
           </Text>
         </Box>
-        <Flex
+        {/* <Flex
           zIndex='2'
           direction='column'
           w={{ base: "100%", md: "420px" }}
@@ -187,8 +186,7 @@ function SignIn() {
               fontWeight='500'
               w='100%'
               h='50'
-              mb='24px'
-              onClick={() => { navigate('/admin') }}>
+              mb='24px'>
               Sign In
             </Button>
           </FormControl>
@@ -200,7 +198,7 @@ function SignIn() {
             mt='0px'>
             <Text color={textColorDetails} fontWeight='400' fontSize='14px'>
               Not registered yet?
-              <NavLink to='/auth/sign-up'>
+               <NavLink to='/auth/sign-up'> 
                 <Text
                   color={textColorBrand}
                   as='span'
@@ -211,10 +209,10 @@ function SignIn() {
               </NavLink>
             </Text>
           </Flex>
-        </Flex>
+        </Flex> */}
       </Flex>
     </DefaultAuth>
   );
 }
 
-export default SignIn;
+export default SignUp;

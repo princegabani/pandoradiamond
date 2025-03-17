@@ -10,7 +10,8 @@ import { NavLink } from "react-router-dom";
 import { FaChevronLeft } from "react-icons/fa";
 
 function AuthIllustration(props) {
-  const { children, illustrationBackground } = props;
+  const { children, illustrationBackground, flag } = props;
+  console.log(flag, "flag")
   // Chakra color mode
   return (
     <Flex position='relative' h='max-content'>
@@ -29,8 +30,8 @@ function AuthIllustration(props) {
         ps={{ xl: "70px" }}
         justifyContent='start'
         direction='column'>
-        <NavLink
-          to='/admin'
+        {flag && <NavLink
+          to='/auth/sign-in'
           style={() => ({
             width: "fit-content",
             marginTop: "40px",
@@ -48,10 +49,10 @@ function AuthIllustration(props) {
               color='secondaryGray.600'
             />
             <Text ms='0px' fontSize='sm' color='secondaryGray.600'>
-              Back to Simmmple
+              Back to Simple
             </Text>
           </Flex>
-        </NavLink>
+        </NavLink>}
         {children}
         <Box
           display={{ base: "none", md: "block" }}
